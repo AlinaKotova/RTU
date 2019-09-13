@@ -4,7 +4,7 @@ public class PerfectNumber
 	public static void main(String[] args) 
 	{
 		Scanner in = new Scanner(System.in);
-        System.out.print("Enter a number: ");
+        System.out.print("Enter a  positive number: ");
         int number = in.nextInt();
         in.close();
         detect(number);
@@ -25,14 +25,17 @@ public class PerfectNumber
 		if (Sum == n) 
 		{
 			System.out.printf("\n% d is a Perfect Number", n);
+			return;
 		}
 		if (Sum > n) 
 		{
 			System.out.printf("\n% d is a Abundant Number", n);
+			return;
 		}
 		else
 		{
 			System.out.printf("\n% d is a Deficient Number", n);
+			return;
 		}
 	}
 }
