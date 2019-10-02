@@ -28,10 +28,10 @@ public class PerfectNumberLambda
 		{
 			Set<Integer> divisors = divisors(n);
 			
-			Integer Sum = divisors.stream().mapToInt(Integer::intValue).sum() -n;
+			Integer sum = divisors.stream().mapToInt(Integer::intValue).sum() -n;
 			
-			return Sum == n ? STATE.PERFECT
-			         : Sum < n ? STATE.DEFICIENT
+			return sum == n ? STATE.PERFECT
+			         : sum < n ? STATE.DEFICIENT
 			         : STATE.ABUNDANT;	
 		}
 }
