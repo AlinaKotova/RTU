@@ -28,19 +28,19 @@ public class PerfectNumber
 		
 		public static STATE process(int n)
 		{
-			int Sum = 0;
+			int sum = 0;
 			
 			
 			for(Integer div : divisors(n))
 			{
-		          Sum+= div;	
+		          sum+= div;	
 		    }
 			
-			Sum-=n;
+			sum-=n;
 			  
-			if (Sum == n) return STATE.PERFECT;
+			if (sum == n) return STATE.PERFECT;
 			
-			if (Sum > n) return STATE.ABUNDANT;
+			if (sum > n) return STATE.ABUNDANT;
 
 			else return STATE.DEFICIENT;
 			
