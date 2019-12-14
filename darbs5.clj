@@ -1,3 +1,5 @@
+;;НЕ БЕЙТЕ ПОЖАЛУЙСТА, ЭТО ВЫГЛЯДИТ, ВЕРОЯТНО КРИВО И НЕ ОПТИМАЛЬНО:)
+
 (use 'clojure.core)
 (use 'clojure.string)
 
@@ -30,13 +32,16 @@
 (def pos 0)                                      ;;DEFINE POSITION COUNTER FOR CHAR SUBSTRINGS
 
 (defn decrypt [string key]
-
+  
   (encrypt string key)   ;;TO GET AN OUTPUT STRING FROM AN ARRAY, WE NEED TO FIND OUT, HOW MUCH CHARS WILL BE IN EACH ROW
 
   (dotimes [n key]       ;;INSERT ENCRYPT CHAR SUBSTRINGS INTO ARRAY BY ROWS             
     (aset new n (subs (translate string) pos (+ pos (count (get newstring n)))))
     (def pos (+ pos (count (get newstring n))))
   )
+  
+  (def down false)           ;;DEFINE CIPHER DIRECTION
+  (def row 0) 
 
   (dotimes [n len]            ;;GET OUT AN OUTPUT SEQUENCE OF CHARS FROM AN ARRAY, USING A CIPHER DIRECTION
     (print(subs (get new row ) 0 1))
